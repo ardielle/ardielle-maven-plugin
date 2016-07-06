@@ -30,9 +30,9 @@ Usage
             <plugin>
                 <groupId>com.yahoo.ardielle</groupId>
                 <artifactId>rdl-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>1.14.4</version>
                 <configuration>
-                    <rdlDirectory>${project.build.resources[0].directory}/rdl</rdlDirectory> <!-- todo replace -->
+                    <rdlDirectory>${project.build.resources[0].directory}/rdl</rdlDirectory>
                     <generatedClientDirectory>${project.build.directory}/generated-sources/rdl</generatedClientDirectory>
                 </configuration>
                 <executions>
@@ -47,6 +47,16 @@ Usage
             </plugin>
         </plugins>
     </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-yahoo-maven</id>
+            <name>bintray-plugins</name>
+            <url>http://yahoo.bintray.com/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
 ```
 
