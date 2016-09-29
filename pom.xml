@@ -10,7 +10,7 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
 
     <groupId>com.yahoo.rdl</groupId>
     <artifactId>rdl-maven-plugin</artifactId>
-    <version>1.14.4</version>
+    <version>1.14.5</version>
     <packaging>maven-plugin</packaging>
 
     <name>rdl-maven-plugin Maven Plugin</name>
