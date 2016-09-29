@@ -28,7 +28,7 @@ Usage
     <build>
         <plugins>
             <plugin>
-                <groupId>com.yahoo.ardielle</groupId>
+                <groupId>com.yahoo.rdl</groupId>
                 <artifactId>rdl-maven-plugin</artifactId>
                 <version>1.14.4</version>
                 <configuration>
