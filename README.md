@@ -22,18 +22,19 @@ Usage
         <dependency>
             <groupId>com.yahoo.rdl</groupId>
             <artifactId>rdl-java</artifactId>
-            <version>1.4.7-11</version>
+            <version>1.4.8</version>
         </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
-                <groupId>com.yahoo.ardielle</groupId>
+                <groupId>com.yahoo.rdl</groupId>
                 <artifactId>rdl-maven-plugin</artifactId>
-                <version>1.14.4</version>
+                <version>1.14.5</version>
                 <configuration>
                     <rdlDirectory>${project.build.resources[0].directory}/rdl</rdlDirectory>
                     <generatedClientDirectory>${project.build.directory}/generated-sources/rdl</generatedClientDirectory>
+                    <sourceEncoding>UTF-8</sourceEncoding>
                 </configuration>
                 <executions>
                     <execution>
@@ -69,7 +70,7 @@ and some server classes.
         <dependency>
             <groupId>com.yahoo.rdl</groupId>
             <artifactId>rdl-java</artifactId>
-            <version>1.4.7-11</version>
+            <version>1.4.8</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
