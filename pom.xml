@@ -158,6 +158,9 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
                             </pomIncludes>
                             <postBuildHookScript>verify</postBuildHookScript>
                             <settingsFile>src/it/settings.xml</settingsFile>
+                            <extraArtifacts>
+                                <extraArtifact>com.yahoo.rdl:rdl-java:1.4.11</extraArtifact>
+                            </extraArtifacts>
                             <goals>
                                 <goal>clean</goal>
                                 <goal>test-compile</goal>
@@ -186,5 +189,16 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
             <url>https://api.bintray.com/maven/yahoo/maven/rdl-maven-plugin/;publish=1</url>
         </repository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-yahoo-maven</id>
+            <name>bintray-plugins</name>
+            <url>http://yahoo.bintray.com/maven</url>
+        </repository>
+    </repositories>
 
 </project>
