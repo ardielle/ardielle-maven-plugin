@@ -22,7 +22,7 @@ Usage
         <dependency>
             <groupId>com.yahoo.rdl</groupId>
             <artifactId>rdl-java</artifactId>
-            <version>1.4.11</version>
+            <version>1.4.12</version>
         </dependency>
     </dependencies>
     <build>
@@ -70,7 +70,7 @@ and some server classes.
         <dependency>
             <groupId>com.yahoo.rdl</groupId>
             <artifactId>rdl-java</artifactId>
-            <version>1.4.11</version>
+            <version>1.4.12</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
