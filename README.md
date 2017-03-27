@@ -5,10 +5,10 @@ This maven plugin is a wrapper around the [rdl binary tool](https://github.com/a
 use this plugin to generate java source files from rdl files defined within the project.
 [RDL](https://ardielle.github.io/) is a formal language for defining restful resources.
 
-The `:generate-jax-rs-resources` goal generates jax-rs resources from a project's rdl files.
+The `:generate` goal generates java code from a project's rdl files.
 
 ```
-mvn rdl:generate-jax-rs-resources
+mvn rdl:generate
 ```
 
 It is simply a wrapper around `rdl generate java-model` and `rdl generate java-server`.
@@ -33,16 +33,42 @@ Usage
                 <version>1.14.6</version>
                 <configuration>
                     <rdlDirectory>${project.build.resources[0].directory}/rdl</rdlDirectory>
-                    <generatedClientDirectory>${project.build.directory}/generated-sources/rdl</generatedClientDirectory>
                     <sourceEncoding>UTF-8</sourceEncoding>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>generate-jax-rs-resources</id>
+                        <id>generate</id>
                         <phase>generate-sources</phase>
                         <goals>
-                            <goal>generate-jax-rs-resources</goal>
+                            <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <commands>
+                                <arguments>generate -o ${project.build.directory}/generated-sources/rdl java-model ${project.build.resources[0].directory}/rdl/com/yahoo/assets.rdl</arguments>
+                                <arguments>generate -o ${project.build.directory}/generated-sources/rdl java-server ${project.build.resources[0].directory}/rdl/com/yahoo/assets.rdl</arguments>
+                            </commands>
+                            <!-- rawCommands is equivalent to commands; only one or the other should be necessary -->  
+                            <rawCommands>
+                                <rawCommand>
+                                    <arguments>
+                                        <argument>generate</argument>
+                                        <argument>-o</argument>
+                                        <argument>${project.build.directory}/generated-sources/rdl</argument>
+                                        <argument>java-model</argument>
+                                        <argument>${project.build.resources[0].directory}/rdl/com/yahoo/assets.rdl</argument>
+                                    </arguments>
+                                </rawCommand>
+                                <rawCommand>
+                                    <arguments>
+                                        <argument>generate</argument>
+                                        <argument>-o</argument>
+                                        <argument>${project.build.directory}/generated-sources/rdl</argument>
+                                        <argument>java-server</argument>
+                                        <argument>${project.build.resources[0].directory}/rdl/com/yahoo/assets.rdl</argument>
+                                    </arguments>
+                                </rawCommand>
+                            </rawCommands>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -94,6 +120,7 @@ Properties
 ### rdlDirectory
 
 Specifies the folder where the `*.rdl` files are in the project source tree. Default value is `src/main/resources/rdl`.
+Ignored if `commands` or `rawCommands` are defined.
 
 ### sourceEncoding
 
@@ -104,6 +131,17 @@ to the character encoding of the rdl files.
 
 Defaults to false. If set to true, then this plugin will do nothing. Useful in the context of a multi-module
 maven project, when you want to override the inheritance of rdl-maven-plugin.
+
+### commands and rawCommands
+
+Defaults to:
+
+```
+generate -o ${project.build.directory}/generated-sources/rdl java-model src/main/resources/rdl/path/to/spec.rdl
+generate -o ${project.build.directory}/generated-sources/rdl java-server src/main/resources/rdl/path/to/spec.rdl
+```
+
+Specifies the arguments that will be passed to the rdl binary. `commands` is split by [maven-utils](https://maven.apache.org/shared/maven-shared-utils/apidocs/org/apache/maven/shared/utils/cli/CommandLineUtils.html#translateCommandline). Use `rawCommands` instead if you need more precise control on the split.
 
 Building
 --------

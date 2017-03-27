@@ -78,6 +78,11 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>3.0.24</version>
+        </dependency>
+        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>1.9.5</version>
