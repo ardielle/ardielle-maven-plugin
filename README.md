@@ -30,7 +30,7 @@ Usage
             <plugin>
                 <groupId>com.yahoo.rdl</groupId>
                 <artifactId>rdl-maven-plugin</artifactId>
-                <version>1.14.6</version>
+                <version>1.15.1</version>
                 <configuration>
                     <rdlDirectory>${project.build.resources[0].directory}/rdl</rdlDirectory>
                     <sourceEncoding>UTF-8</sourceEncoding>
