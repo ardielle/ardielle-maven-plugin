@@ -1,0 +1,21 @@
+// Copyright 2016 Yahoo Inc.
+// Licensed under the terms of the Apache version 2.0 license. See LICENSE file for terms.
+name ApiResources;
+namespace com;
+
+type ApiAssetsRespObject Struct {
+
+}
+
+// uploadAsset();
+// Asset data is expected in the post request body.
+// Typically, the client will POST to /groups/{groupId}/events
+// immediately after calling this endpoint, using the assetId returned as a query string parameter.
+resource ApiAssetsRespObject POST "/api/v1/assets?height={height}&width={width}&sourceUrl={sourceUrl}&colors={colors}&assetId={assetId}" {
+  String sourceName;
+  Int32 height (optional, default=0);
+  Int32 width (optional, default=0);
+  String sourceUrl (optional);
+  String colors (optional);
+  String assetId (optional); // Only used for uploading default assets. Mobile clients should always leave this blank.
+}
