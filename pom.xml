@@ -10,7 +10,7 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
 
     <groupId>com.yahoo.rdl</groupId>
     <artifactId>rdl-maven-plugin</artifactId>
-    <version>1.15.1</version>
+    <version>1.15.2</version>
     <packaging>maven-plugin</packaging>
 
     <name>rdl-maven-plugin Maven Plugin</name>
@@ -164,7 +164,7 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
                             <postBuildHookScript>verify</postBuildHookScript>
                             <settingsFile>src/it/settings.xml</settingsFile>
                             <extraArtifacts>
-                                <extraArtifact>com.yahoo.rdl:rdl-java:1.4.12</extraArtifact>
+                                <extraArtifact>com.yahoo.rdl:rdl-java:1.4.14</extraArtifact>
                             </extraArtifacts>
                             <goals>
                                 <goal>clean</goal>
