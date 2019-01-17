@@ -164,7 +164,7 @@ Licensed under the terms of the Apache version 2.0 license. See LICENSE file for
                             <postBuildHookScript>verify</postBuildHookScript>
                             <settingsFile>src/it/settings.xml</settingsFile>
                             <extraArtifacts>
-                                <extraArtifact>com.yahoo.rdl:rdl-java:1.4.12</extraArtifact>
+                                <extraArtifact>com.yahoo.rdl:rdl-java:1.5.2</extraArtifact>
                             </extraArtifacts>
                             <goals>
                                 <goal>clean</goal>
